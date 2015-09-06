@@ -36,7 +36,7 @@
             </div>
         </fieldset>
     </form>
-    
+
     <hr>
     <div id="thenums"></div>
 
@@ -48,29 +48,12 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="js/jquery-2.1.4.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/fizzbuzz.js"></script>
 
-<!-- My code for Assignment 0
+<!-- My addition for Assignment 0
+Requires the file fizzbuzz.js
 ================================================== -->
 <script>
-  /* Function to print numbers from 1 to n to the page, but for multiples of
-     3 print "Fizz", for multiples of 5 print "Buzz", and multiples
-     of both 3 and 5 print "FizzBuzz" */
-  fizzbuzz = function (n) {
-    var i , numlist;
-    numlist = "The numbers: <br>";
-    for ( i = 1; i <= n; i++ ) {
-      if ( i%15 == 0 ) {
-        numlist += "<span style='color: #00a54e'>FizzBuzz</span> ";
-      } else if ( i%3 == 0 ) {
-        numlist += "<span style='color: #00a9a4'>Fizz</span> ";
-      } else if ( i%5 == 0 ) {
-        numlist += "<span style='color: #8DCB41'>Buzz</span> "; 
-      } else {
-        numlist += i + " ";
-      }
-    }
-    return numlist;
-  }
   $(document).ready( function(){
     $( "#thebutton").click( function() {
       var num = $("#number").val();
