@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Luann Ebert">
 
-    <title>Blank</title>
+    <title>FizzBuzz</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -25,8 +25,20 @@
 
 <div class="container">
 
-    <h1>Hello World!</h1>
-    <p class="lead">This is something!</p>
+    <h1>Fizzbuzz!</h1>
+    <form>
+        <fieldset>
+            <div><label for="number">Please enter a positive number: </label>
+                <input type="number" name="number" id="number" min="1" value="1">
+            </div>
+            <div>
+                <input type="button" id="thebutton" value="Print the numbers!">
+            </div>
+        </fieldset>
+    </form>
+    
+    <hr>
+    <div id="thenums"></div>
 
 </div><!-- /.container -->
 
@@ -36,5 +48,36 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="js/jquery-2.1.4.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+
+<!-- My code for Assignment 0
+================================================== -->
+<script>
+  /* Function to print numbers from 1 to n to the page, but for multiples of
+     3 print "Fizz", for multiples of 5 print "Buzz", and multiples
+     of both 3 and 5 print "FizzBuzz" */
+  fizzbuzz = function (n) {
+    var i , numlist;
+    numlist = "The numbers: <br>";
+    for ( i = 1; i <= n; i++ ) {
+      if ( i%15 == 0 ) {
+        numlist += "<span style='color: #00a54e'>FizzBuzz</span> ";
+      } else if ( i%3 == 0 ) {
+        numlist += "<span style='color: #00a9a4'>Fizz</span> ";
+      } else if ( i%5 == 0 ) {
+        numlist += "<span style='color: #8DCB41'>Buzz</span> "; 
+      } else {
+        numlist += i + " ";
+      }
+    }
+    return numlist;
+  }
+  $(document).ready( function(){
+    $( "#thebutton").click( function() {
+      var num = $("#number").val();
+      var numstoprint = fizzbuzz( num );
+      $('div#thenums').html( numstoprint );
+    });
+  });
+</script>
 </body>
 </html>
